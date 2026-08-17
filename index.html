@@ -139,6 +139,53 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
 #adminToast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 @media(max-width:760px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
 
+/* ========== INSIGHTS + FAQ ========== */
+.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:900px){.ins-grid{grid-template-columns:1fr;}}
+.gift-row{display:flex;align-items:center;gap:10px;margin-top:9px;}
+.gift-label{width:150px;font-size:12px;font-weight:600;color:var(--gray-700);flex-shrink:0;}
+.gift-bar{flex:1;height:16px;background:var(--gray-100);border-radius:8px;overflow:hidden;}
+.gift-fill{height:100%;background:var(--blue);border-radius:8px;}
+.gift-num{width:26px;font-size:12px;font-weight:800;color:var(--blue);text-align:right;}
+.duo-chart{display:flex;align-items:flex-end;gap:16px;height:110px;margin-top:8px;}
+.duo-col{flex:1;display:flex;align-items:flex-end;gap:5px;height:100%;}
+.duo-col .b1{flex:1;background:#BFDBFE;border-radius:5px 5px 0 0;}
+.duo-col .b2{flex:1;background:var(--blue);border-radius:5px 5px 0 0;}
+.care-row{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--gray-100);}
+.care-row:last-child{border-bottom:none;}
+.fun-row{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.fun-label{width:168px;font-size:12px;font-weight:600;color:var(--gray-700);flex-shrink:0;}
+.fun-bar{flex:1;height:20px;background:var(--gray-100);border-radius:6px;overflow:hidden;}
+.fun-fill{height:100%;background:linear-gradient(90deg,#3B82F6,#2563EB);border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px;color:#fff;font-size:10.5px;font-weight:800;}
+.stack-bar{display:flex;height:26px;border-radius:8px;overflow:hidden;margin-top:12px;}
+.stack-leg{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px;}
+.stack-leg span{font-size:11px;color:var(--gray-500);font-weight:600;display:flex;align-items:center;gap:5px;}
+.leg-dot{width:9px;height:9px;border-radius:3px;display:inline-block;}
+.gap-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--gray-100);font-size:12.5px;color:var(--gray-700);}
+.gap-row:last-child{border-bottom:none;}
+.yir{margin-top:14px;border-radius:16px;background:linear-gradient(135deg,#0F1B33,#1E3A8A 60%,#2563EB);padding:24px;color:#fff;}
+.yir-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;}
+@media(max-width:760px){.yir-grid{grid-template-columns:repeat(2,1fr);}}
+.yir-stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;}
+.yir-stat span{font-size:11px;color:#93C5FD;font-weight:600;}
+.priv-strip{background:var(--blue-soft);border:1px solid #DBEAFE;border-radius:12px;padding:12px 15px;font-size:12px;color:#1E40AF;font-weight:600;line-height:1.5;margin-top:14px;}
+.feat-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:38px;text-align:left;}
+@media(max-width:760px){.feat-cols{grid-template-columns:1fr;}}
+.feat-col{border:1px solid var(--gray-100);border-radius:18px;background:#fff;padding:26px 24px;}
+.feat-col h3{font-size:17px;font-weight:800;color:var(--blue);margin-bottom:14px;}
+.feat-item{display:flex;gap:10px;font-size:13.5px;color:var(--gray-700);line-height:1.5;margin-bottom:10px;}
+.feat-item b{color:var(--ink);}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:36px;text-align:left;}
+.trust-card{background:rgba(255,255,255,.06);border:1px solid rgba(147,197,253,.25);border-radius:16px;padding:20px;}
+.trust-card h4{font-size:14.5px;font-weight:800;color:#fff;margin-bottom:6px;}
+.trust-card p{font-size:12.5px;color:#93C5FD;line-height:1.55;}
+.faq-wrap{max-width:780px;margin:36px auto 0;text-align:left;}
+.faq-wrap details{border:1px solid var(--gray-100);border-radius:14px;background:#fff;margin-bottom:10px;padding:0 20px;}
+.faq-wrap summary{font-size:15px;font-weight:700;color:var(--ink);padding:17px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-wrap summary::after{content:'+';font-size:20px;color:var(--blue);font-weight:600;}
+.faq-wrap details[open] summary::after{content:'\2212';}
+.faq-wrap details p{font-size:13.5px;color:var(--gray-500);line-height:1.65;padding-bottom:17px;}
+
 /* ========== TOUR + PUSH + POLISH ========== */
 .tour-card{position:absolute;left:12px;right:12px;bottom:96px;z-index:85;background:var(--ink);color:#fff;border-radius:16px;padding:15px 16px;box-shadow:0 12px 30px rgba(0,0,0,.35);animation:up .25s ease;}
 .tour-text{font-size:13px;line-height:1.55;}
@@ -501,6 +548,7 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
     <a href="#member-demo">Member app</a>
     <a href="#admin-demo">For church leaders</a>
     <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
   </div>
   <a class="nav-cta" href="#pilot">Request a pilot</a>
 </div></nav>
@@ -559,6 +607,15 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
           <h2>Tell your church<br>about yourself</h2>
           <div class="ob-sub">This helps members find you when they need what you offer. Takes about two minutes.</div>
           <div class="ob-field"><label>Occupation</label><input type="text" value="Small Business Owner"></div>
+          <div class="ob-field"><label>City &amp; ZIP</label><input type="text" value="Austin, TX 78745"></div>
+          <div class="ob-field" style="display:flex;gap:12px;">
+            <div style="flex:1;"><label>Age</label><input type="text" value="34"></div>
+            <div style="flex:2;"><label>Home campus</label>
+              <select style="width:100%;font-family:inherit;font-size:14.5px;border:1px solid var(--gray-200);border-radius:12px;padding:13px 15px;background:#fff;outline:none;">
+                <option>South Austin</option><option>Buda</option><option>Online</option>
+              </select>
+            </div>
+          </div>
           <div class="ob-field"><label>Top skills (comma separated)</label><input type="text" value="Marketing, Sales, Leadership"></div>
           <div class="ob-field"><label>What can you offer the church community?</label><input type="text" value="Business advice, marketing help"></div>
           <button class="btn btn-primary ob-next" onclick="obGo(3)">Continue</button>
@@ -657,7 +714,7 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
  <div class="demo-inner">
   <span class="eyebrow">For church leadership</span>
   <h2 class="sec-h">Members get community.<br>The church gets stewardship.</h2>
-  <p class="sec-p">Every subscription includes a web dashboard for pastors and admins — engagement insight, light-touch moderation, and church-wide communication. This one's live too — click around.</p>
+  <p class="sec-p">Every subscription includes a web dashboard for pastors and admins — congregation insights, light-touch moderation, group oversight, and church-wide communication. This one's live too — click around, and don't miss the Insights tab.</p>
   <div class="browser">
     <div class="browser-top">
       <span class="b-dot" style="background:#FCA5A5"></span><span class="b-dot" style="background:#FCD34D"></span><span class="b-dot" style="background:#86EFAC"></span>
@@ -672,6 +729,52 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
  </div>
 </section>
 
+<section class="demo-section" id="insights">
+ <div class="demo-inner">
+  <span class="eyebrow">Why churches subscribe</span>
+  <h2 class="sec-h">Know your church like never before.</h2>
+  <p class="sec-p">Most churches know who shows up on Sunday — and little else. Interconnected gives leadership a living picture of the body it shepherds.</p>
+  <div class="props" style="padding:6px 0 0;">
+    <div class="prop"><div class="prop-ic">🗺️</div><h3>A map of the body</h3><p>See where your congregation actually lives — invaluable for placing groups, planning care, and one day, planting campuses.</p></div>
+    <div class="prop"><div class="prop-ic">🎁</div><h3>A gifts census</h3><p>"Your church contains 14 teachers, 9 healthcare workers, 8 tradespeople, and 11 willing mentors." No church has ever known this about itself.</p></div>
+    <div class="prop"><div class="prop-ic">📈</div><h3>Community health</h3><p>Needs posted and needs met, month over month — proof the body is working, and proof of the platform's value at renewal time.</p></div>
+    <div class="prop"><div class="prop-ic">🕊️</div><h3>Care signals</h3><p>Members who've gone quiet, surfaced gently for a check-in. Shepherding, digitized — never surveillance.</p></div>
+    <div class="prop"><div class="prop-ic">🚪</div><h3>Integration funnel</h3><p>Watch newcomers move from joining to belonging — and see exactly where someone needs a hand along the way.</p></div>
+    <div class="prop"><div class="prop-ic">🎉</div><h3>Your Year in Review</h3><p>An auto-generated vision-night report: needs met, groups launched, connections made. Your congregation's story, told with numbers.</p></div>
+  </div>
+  <p class="demo-note">All insights are aggregate. Private messages and confidential circles are never visible to anyone — including us.</p>
+ </div>
+</section>
+
+<section class="demo-section alt" id="features">
+ <div class="demo-inner">
+  <span class="eyebrow">Everything inside</span>
+  <h2 class="sec-h">Two experiences. One connected church.</h2>
+  <div class="feat-cols">
+    <div class="feat-col">
+      <h3>For every member — free</h3>
+      <div class="feat-item">📰 <span><b>One feed, member-controlled.</b> Blend church-wide posts with your groups. No algorithm.</span></div>
+      <div class="feat-item">🤝 <span><b>Needs &amp; offerings</b> with threaded conversation and "marked as helped" testimonies.</span></div>
+      <div class="feat-item">👥 <span><b>Start and lead groups</b> — Bible studies, hobby circles, serve teams — in under a minute.</span></div>
+      <div class="feat-item">🔍 <span><b>Search the congregation</b> by name, skill, or occupation.</span></div>
+      <div class="feat-item">⛪ <span><b>Church page</b> with announcements, events, and one-tap RSVP.</span></div>
+      <div class="feat-item">💬 <span><b>Private encrypted messaging</b> — never visible to admins or platform staff.</span></div>
+      <div class="feat-item">🎛️ <span><b>Privacy controls</b> for directory visibility and who can message you.</span></div>
+    </div>
+    <div class="feat-col">
+      <h3>For church leadership</h3>
+      <div class="feat-item">📈 <span><b>Congregation insights:</b> member map, gifts census, community health, and care signals.</span></div>
+      <div class="feat-item">🛡️ <span><b>60-second moderation:</b> anonymous reports, one-tap actions, weekly digests instead of alarms.</span></div>
+      <div class="feat-item">👁️ <span><b>Group oversight:</b> review new groups, badge official ministries, remove anything off-mission.</span></div>
+      <div class="feat-item">📣 <span><b>Broadcast announcements</b> straight into every member's app.</span></div>
+      <div class="feat-item">📇 <span><b>Member roster</b> with activity status and invite tools.</span></div>
+      <div class="feat-item">🎨 <span><b>Your branding,</b> your own fully siloed environment.</span></div>
+      <div class="feat-item">🚀 <span><b>Launch Sunday kit:</b> pulpit script, slides, and QR codes for the screens.</span></div>
+    </div>
+  </div>
+ </div>
+</section>
+
 <section class="demo-section" id="how">
  <div class="demo-inner">
   <span class="eyebrow">How it launches</span>
@@ -682,6 +785,36 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
     <div class="how-step"><div class="how-num">3</div><h3>Needs get met all week</h3><p>The feed, directory, and groups go to work — turning a congregation of acquaintances into an interconnected community.</p></div>
   </div>
   <p class="how-note"><b>Churches subscribe annually. Members always join free.</b> Pricing scales with congregation size.</p>
+ </div>
+</section>
+
+<section class="demo-section" id="trust" style="background:linear-gradient(150deg,#0F1B33,#16264A);border:none;">
+ <div class="demo-inner">
+  <span class="eyebrow" style="background:rgba(147,197,253,.15);color:#93C5FD;">Privacy &amp; trust</span>
+  <h2 class="sec-h" style="color:#fff;">Built to be trusted with a church family.</h2>
+  <div class="trust-grid">
+    <div class="trust-card"><h4>🔐 Encrypted messages</h4><p>Personal conversations are private — inaccessible to church admins and to Interconnected staff alike.</p></div>
+    <div class="trust-card"><h4>🏠 One church, one silo</h4><p>Every church runs in its own isolated environment. Members only ever interact within their own congregation.</p></div>
+    <div class="trust-card"><h4>🎚️ Members hold the controls</h4><p>Each member decides their directory visibility and who may message them.</p></div>
+    <div class="trust-card"><h4>🕊️ Confidential circles</h4><p>Recovery and support groups never expose member lists — join requests go only to their leaders.</p></div>
+    <div class="trust-card"><h4>📊 Aggregate-only insights</h4><p>Leadership sees the health of the body, never the private conversations within it.</p></div>
+    <div class="trust-card"><h4>🚫 No ads, no algorithms</h4><p>Nothing farms attention and nothing is sold. The church is the customer — members are never the product.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="demo-section" id="faq">
+ <div class="demo-inner">
+  <span class="eyebrow">Common questions</span>
+  <h2 class="sec-h">Answers for pastors and boards.</h2>
+  <div class="faq-wrap">
+    <details><summary>What does it cost, and who pays?</summary><p>The church subscribes annually — priced by congregation size, in the same range as the giving, streaming, and management tools churches already budget for. Members always join free. An ad-free experience is standard; discounted plans are available for budget-constrained churches.</p></details>
+    <details><summary>How much work is this for our staff?</summary><p>Very little, by design. Moderation reports batch into a weekly digest and resolve in about a minute each. Groups are created and led by members, not the church office. A typical admin spends minutes per week, not hours.</p></details>
+    <details><summary>Can leadership read members' messages?</summary><p>No — and neither can we. Personal messages are encrypted and private, period. Leadership sees aggregate community health, never private content. We believe a church platform is only useful if members trust it completely.</p></details>
+    <details><summary>What keeps the feed healthy?</summary><p>Community standards agreed to at signup, a discreet anonymous report button on every post, and a grace-first moderation flow: private warnings before restrictions, with platform-level support behind your admins for anything serious.</p></details>
+    <details><summary>How does a launch actually work?</summary><p>We provide a Launch Sunday kit — pulpit announcement script, slides, and QR codes. Members scan, create a two-minute profile, and land in the feed. Pastoral introduction is the engine: churches can realistically see half the congregation join in the first weeks.</p></details>
+    <details><summary>Where is this today?</summary><p>Interconnected is in the prototype stage — everything on this page is a live, working demonstration. We're gathering feedback from pastors now and selecting a small group of founding pilot churches ahead of development. Early conversations shape the product.</p></details>
+  </div>
  </div>
 </section>
 
@@ -1451,7 +1584,7 @@ function aToast(msg){
 function adminGo(v){ adminView = v; renderAdmin(); }
 function renderAdmin(){
   const items = [
-    ["dash","Dashboard","📊"],["mod","Moderation","🛡️"],["groups","Groups","🤝"],["members","Members","👥"],["anns","Announcements","📣"]
+    ["dash","Dashboard","📊"],["insights","Insights","📈"],["mod","Moderation","🛡️"],["groups","Groups","🤝"],["members","Members","👥"],["anns","Announcements","📣"]
   ];
   const badgeFor = id => {
     if(id==="mod" && REPORTS.length) return `<span class="side-badge">${REPORTS.length}</span>`;
@@ -1465,6 +1598,7 @@ function renderAdmin(){
     ${items.map(i=>`<button class="aside-item ${adminView===i[0]?"on":""}" onclick="adminGo('${i[0]}')">${i[2]} ${i[1]}${badgeFor(i[0])}</button>`).join("")}`;
   const m = document.getElementById("adminMain");
   if(adminView==="dash") m.innerHTML = adminDash();
+  if(adminView==="insights") m.innerHTML = adminInsights();
   if(adminView==="mod") m.innerHTML = adminMod();
   if(adminView==="groups") m.innerHTML = adminGroups();
   if(adminView==="members") m.innerHTML = adminMembers();
@@ -1492,6 +1626,128 @@ function adminDash(){
       <div class="act-row">👋 <span><b>Grace Liu</b> joined via the church invite code and completed her profile</span><span class="act-time">2h</span></div>
       <div class="act-row">💬 <span>42 new comments across 12 posts — Men in Business is your most active group</span><span class="act-time">Today</span></div>
       <div class="act-row">🎉 <span><b>Men in Business Breakfast</b> reached 31 RSVPs</span><span class="act-time">1d</span></div>
+    </div>`;
+}
+function adminInsights(){
+  const gifts = [["Teachers & tutors",14],["Healthcare workers",9],["Contractors & trades",8],["Finance & accounting",6],["Legal",3],["Creative & design",7],["Open to mentoring",11]];
+  const gmax = 14;
+  const months = ["Apr","May","Jun","Jul"];
+  const posted = [31,38,42,47], resolved = [22,29,31,36];
+  const care = [
+    {n:"Frank Delgado", i:"FD", d:"Last active 34 days ago · usually posts weekly"},
+    {n:"Marie Chen", i:"MC", d:"Last active 41 days ago · RSVP'd but didn't attend last two events"},
+    {n:"Robert King", i:"RK", d:"Last active 52 days ago · new member, never completed profile"}
+  ];
+  const funnel = [["Joined (last 90 days)",64,100],["Completed their profile",58,91],["Joined a group",41,64],["Posted or commented",33,52],["Made a real connection",27,42]];
+  const stages = [["Young families",31,"#2563EB"],["Young professionals & singles",22,"#3B82F6"],["Empty nesters",24,"#60A5FA"],["Seniors",15,"#93C5FD"],["Students",8,"#BFDBFE"]];
+  const ages = [["18–24",7],["25–34",21],["35–44",26],["45–54",19],["55–64",14],["65+",13]];
+  const amax = 26;
+  const campuses = [["South Austin",342,"#2563EB"],["Buda",108,"#60A5FA"],["Online",37,"#BFDBFE"]];
+  return `
+    <div class="am-title">Congregation insights</div>
+    <div class="am-sub">A living picture of the body — aggregate and pastoral, never private content.</div>
+
+    <div class="yir">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="font-size:15px;font-weight:800;">🎉 Your Year in Review — ready for vision night</div>
+        <button class="btn" style="margin-left:auto;background:#fff;color:var(--blue);padding:8px 15px;font-size:12px;" onclick="aToast('Year in Review deck downloaded — drop it straight into vision night')">Download slides</button>
+      </div>
+      <div class="yir-grid">
+        <div class="yir-stat"><b>347</b><span>NEEDS MET IN THE BODY</span></div>
+        <div class="yir-stat"><b>23</b><span>GROUPS STARTED BY MEMBERS</span></div>
+        <div class="yir-stat"><b>1,204</b><span>NEW CONNECTIONS MADE</span></div>
+        <div class="yir-stat"><b>78%</b><span>OF MEMBERS ACTIVE MONTHLY</span></div>
+      </div>
+    </div>
+
+    <div class="ins-grid">
+      <div class="panel" style="margin-top:0;">
+        <div class="panel-h">New member integration — last 90 days</div>
+        ${funnel.map(f=>`<div class="fun-row"><div class="fun-label">${f[0]}</div><div class="fun-bar"><div class="fun-fill" style="width:${f[2]}%">${f[1]}</div></div></div>`).join("")}
+        <div style="font-size:11px;color:var(--gray-400);margin-top:12px;">42% of newcomers form a real connection in their first 90 days. Every step is a place your team can help someone belong.</div>
+      </div>
+      <div class="panel" style="margin-top:0;">
+        <div class="panel-h">Group gap analysis — what members want but can't find</div>
+        <div class="gap-row">🔍 <span style="flex:1;"><b>Moms of preschoolers</b> — searched by 5 members this month, no group exists</span><button class="btn btn-primary" style="padding:7px 12px;font-size:11.5px;" onclick="aToast('Suggestion sent to 5 interested members — nudging a leader to start it')">Nudge a launch</button></div>
+        <div class="gap-row">🔍 <span style="flex:1;"><b>College students</b> — searched by 4 members, no group exists</span><button class="btn btn-primary" style="padding:7px 12px;font-size:11.5px;" onclick="aToast('Suggestion sent to interested members')">Nudge a launch</button></div>
+        <div class="gap-row">🔍 <span style="flex:1;"><b>Financial peace / budgeting</b> — searched by 3 members</span><button class="btn btn-primary" style="padding:7px 12px;font-size:11.5px;" onclick="aToast('Suggestion sent to interested members')">Nudge a launch</button></div>
+        <div class="gap-row">✅ <span style="flex:1;"><b>Pickleball</b> — was a gap last month; Chris Dunn's Circle now has 12 members</span></div>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:10px;">Real demand data for ministry planning — from what your members actually look for.</div>
+      </div>
+    </div>
+
+    <div class="ins-grid">
+      <div class="panel" style="margin-top:0;">
+        <div class="panel-h">Life stage composition</div>
+        <div class="stack-bar">${stages.map(s=>`<div style="width:${s[1]}%;background:${s[2]};"></div>`).join("")}</div>
+        <div class="stack-leg">${stages.map(s=>`<span><span class="leg-dot" style="background:${s[2]};"></span>${s[0]} · ${s[1]}%</span>`).join("")}</div>
+        <div style="border-top:1px solid var(--gray-100);margin-top:14px;padding-top:12px;" class="panel-h">Age distribution</div>
+        <div class="chart" style="height:80px;">${ages.map(a=>`<div class="bar" style="height:${(a[1]/amax*100).toFixed(0)}%"></div>`).join("")}</div>
+        <div class="chart-labels">${ages.map(a=>`<span>${a[0]}</span>`).join("")}</div>
+      </div>
+      <div class="panel" style="margin-top:0;">
+        <div class="panel-h">Campus & growth</div>
+        ${campuses.map(c=>`<div class="gift-row"><div class="gift-label">${c[0]}</div><div class="gift-bar"><div class="gift-fill" style="width:${(c[1]/342*100).toFixed(0)}%;background:${c[2]};"></div></div><div class="gift-num" style="width:34px;">${c[1]}</div></div>`).join("")}
+        <div style="border-top:1px solid var(--gray-100);margin-top:14px;padding-top:12px;" class="panel-h">Growth geography — new members, last 90 days</div>
+        <div class="gap-row">📈 <span style="flex:1;"><b>Kyle +14</b> — your fastest-growing area, 2.1× last year's pace</span></div>
+        <div class="gap-row">📈 <span style="flex:1;"><b>Buda +9</b> — steady growth along the FM 1626 corridor</span></div>
+        <div class="gap-row">📈 <span style="flex:1;"><b>South Austin +7</b> — stable core</span></div>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:10px;">Where the church is growing — intelligence for group placement today and campus planting tomorrow.</div>
+      </div>
+    </div>
+
+    <div class="ins-grid">
+      <div class="panel" style="margin-top:0;">
+        <div class="panel-h">Where Grace Community lives</div>
+        <svg viewBox="0 0 400 240" style="width:100%;border-radius:10px;background:#F8FAFC;">
+          <path d="M0 55 Q 90 30 170 70 T 400 60" stroke="#DBEAFE" stroke-width="10" fill="none" opacity=".8"/>
+          <line x1="205" y1="0" x2="215" y2="240" stroke="#E5E7EB" stroke-width="6"/>
+          <line x1="0" y1="105" x2="400" y2="118" stroke="#E5E7EB" stroke-width="4"/>
+          <line x1="120" y1="0" x2="95" y2="240" stroke="#EEF2F7" stroke-width="4"/>
+          <circle cx="228" cy="72" r="30" fill="#2563EB" opacity=".16"/><circle cx="228" cy="72" r="6" fill="#2563EB"/>
+          <text x="242" y="66" font-size="11" font-weight="700" fill="#1F2937">South Austin</text>
+          <text x="242" y="80" font-size="10" fill="#6B7280">214 members</text>
+          <circle cx="178" cy="128" r="17" fill="#2563EB" opacity=".16"/><circle cx="178" cy="128" r="5" fill="#3B82F6"/>
+          <text x="130" y="118" font-size="10" font-weight="700" fill="#1F2937">Manchaca</text>
+          <text x="130" y="130" font-size="9.5" fill="#6B7280">48</text>
+          <circle cx="212" cy="168" r="23" fill="#2563EB" opacity=".16"/><circle cx="212" cy="168" r="5.5" fill="#2563EB"/>
+          <text x="230" y="164" font-size="11" font-weight="700" fill="#1F2937">Buda</text>
+          <text x="230" y="177" font-size="10" fill="#6B7280">96 members</text>
+          <circle cx="225" cy="212" r="20" fill="#2563EB" opacity=".16"/><circle cx="225" cy="212" r="5" fill="#3B82F6"/>
+          <text x="243" y="208" font-size="11" font-weight="700" fill="#1F2937">Kyle</text>
+          <text x="243" y="221" font-size="10" fill="#6B7280">71 members</text>
+          <circle cx="72" cy="88" r="13" fill="#2563EB" opacity=".16"/><circle cx="72" cy="88" r="4" fill="#60A5FA"/>
+          <text x="34" y="70" font-size="10" font-weight="700" fill="#1F2937">Dripping Springs</text>
+          <text x="34" y="82" font-size="9.5" fill="#6B7280">22</text>
+          <circle cx="145" cy="62" r="16" fill="#2563EB" opacity=".16"/><circle cx="145" cy="62" r="4.5" fill="#60A5FA"/>
+          <text x="118" y="42" font-size="10" font-weight="700" fill="#1F2937">SW Austin</text>
+          <text x="118" y="54" font-size="9.5" fill="#6B7280">36</text>
+        </svg>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:8px;">From member signup ZIP codes.</div>
+      </div>
+      <div class="panel" style="margin-top:0;">
+        <div class="panel-h">Gifts & skills census</div>
+        ${gifts.map(g=>`<div class="gift-row"><div class="gift-label">${g[0]}</div><div class="gift-bar"><div class="gift-fill" style="width:${(g[1]/gmax*100).toFixed(0)}%"></div></div><div class="gift-num">${g[1]}</div></div>`).join("")}
+        <div style="border-top:1px solid var(--gray-100);margin-top:14px;padding-top:12px;" class="panel-h">Community health — needs posted vs. resolved</div>
+        <div class="duo-chart" style="height:80px;">${months.map((m,i)=>`<div style="flex:1;display:flex;flex-direction:column;height:100%;"><div class="duo-col"><div class="b1" style="height:${posted[i]*2}%"></div><div class="b2" style="height:${resolved[i]*2}%"></div></div></div>`).join("")}</div>
+        <div class="chart-labels">${months.map(m=>`<span>${m}</span>`).join("")}</div>
+      </div>
+    </div>
+
+    <div class="ins-grid">
+      <div class="panel" style="margin-top:0;">
+        <div class="panel-h">Pastoral care signals</div>
+        ${care.map(c=>`<div class="care-row">
+          <div class="avatar" style="width:36px;height:36px;font-size:13px;">${c.i}</div>
+          <div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:700;">${c.n}</div>
+          <div style="font-size:11.5px;color:var(--gray-500);margin-top:1px;">${c.d}</div></div>
+          <button class="btn btn-ghost" style="padding:7px 12px;font-size:11.5px;" onclick="aToast('Check-in note sent from your church account')">Check in</button>
+        </div>`).join("")}
+        <div style="font-size:11px;color:var(--gray-400);margin-top:10px;">Quiet members surfaced gently — this is shepherding, not surveillance.</div>
+      </div>
+      <div class="panel" style="margin-top:0;display:flex;flex-direction:column;justify-content:center;">
+        <div class="priv-strip" style="margin-top:0;">🔒 Every insight on this page is aggregate. Interconnected never shows leadership the content of private messages, confidential circle membership, or any individual's activity beyond what members share publicly.</div>
+      </div>
     </div>`;
 }
 function adminMod(){
