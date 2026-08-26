@@ -113,6 +113,34 @@ section,header,nav,footer{scroll-margin-top:64px;}
 footer{padding:34px 22px;text-align:center;}
 footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top:12px;}
 
+/* ========== STORY + SCENARIOS (landing) ========== */
+.story{padding:22px 22px 60px;}
+.scen{padding:0 22px 64px;}
+.story-inner{max-width:1100px;margin:0 auto;text-align:center;}
+.story .sec-h em{font-style:normal;color:var(--blue);}
+.story-grid{display:flex;align-items:stretch;justify-content:center;gap:10px;margin-top:34px;text-align:left;}
+.story-step{flex:1;min-width:0;max-width:340px;display:flex;flex-direction:column;}
+.story-arrow{display:flex;align-items:center;color:#93C5FD;flex-shrink:0;padding-top:70px;}
+.story-label{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:800;color:var(--ink);margin-bottom:12px;}
+.story-num{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.mini{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:20px;padding:14px;text-align:left;flex:1;}
+.mini .card{animation:none;}
+.mini-tall{height:440px;flex:0 0 auto;overflow:hidden;position:relative;}
+.mini-tall::after{content:'';position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(180deg,rgba(249,250,251,0),var(--gray-50));pointer-events:none;}
+.story-note{font-size:14.5px;color:var(--gray-500);line-height:1.65;max-width:620px;margin:30px auto 0;}
+.scen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;text-align:left;align-items:start;}
+.scen-card h3{min-height:0;}
+.scen-card{display:flex;flex-direction:column;}
+.scen-card h3{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-top:16px;}
+.scen-card p{font-size:13.5px;color:var(--gray-500);line-height:1.6;margin-top:6px;}
+@media(max-width:900px){
+  .story-grid{flex-direction:column;align-items:center;}
+  .story-step{max-width:400px;width:100%;}
+  .story-arrow{padding:0;transform:rotate(90deg);}
+  .scen-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto;}
+  .mini-tall{min-height:0;}
+}
+
 /* ========== ADMIN DASHBOARD DEMO ========== */
 .browser{max-width:1020px;margin:40px auto 0;border:1px solid var(--gray-200);border-radius:16px;box-shadow:0 24px 60px rgba(15,23,42,.10);overflow:hidden;text-align:left;background:#fff;}
 .browser-top{display:flex;align-items:center;gap:7px;padding:11px 16px;background:#fff;border-bottom:1px solid var(--gray-100);}
@@ -635,7 +663,7 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
 <header class="hero">
   <span class="eyebrow">Built by believers, for the local church</span>
   <h1>Your church, connected<br><em>every day of the week.</em></h1>
-  <p class="lede">Interconnected is a private, invitation-only home for your church family — where needs are met, gifts are discovered, and Sunday relationships become weekday community. No ads. No algorithms. Just the Body, connected.</p>
+  <p class="lede">A private app for one congregation. Members post what they need, answer with what they can do, and find their place in a group. The church directory, the bulletin board, and the group text — in one place, for your church only.</p>
   <div class="hero-btns">
     <a class="btn btn-primary" href="#member-demo">Try the live demo</a>
     <a class="btn btn-ghost" href="#admin-demo">See the leadership side</a>
@@ -647,10 +675,154 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
   </div>
 </header>
 
-<section class="props">
-  <div class="prop"><div class="prop-ic" style="color:var(--blue);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-3px;"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Discover the gifts in your pews</h3><p>Searchable member profiles reveal the contractor, the nurse, and the CPA who were already sitting three rows over.</p></div>
-  <div class="prop"><div class="prop-ic" style="color:var(--blue);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-3px;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9"/><path d="M16 3.1a4 4 0 010 7.8"/></svg></div><h3>Turn needs into connections</h3><p>A needs-first feed turns "does anyone know a…" into answered requests — resolved posts stay visible as community testimony.</p></div>
-  <div class="prop"><div class="prop-ic" style="color:var(--blue);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-3px;"><path d="M12 2v5"/><path d="M9.5 4.5h5"/><path d="M5 21V11l7-4 7 4v10"/><path d="M9 21v-5a3 3 0 016 0v5"/></svg></div><h3>Anchored to your church</h3><p>Ministry groups with their own files and schedules, a church calendar with RSVPs, and leadership announcements keep the church — not an algorithm — at the center.</p></div>
+<section class="story" id="story">
+  <div class="story-inner">
+    <span class="eyebrow">The whole idea in one story</span>
+    <h2 class="sec-h">Someone at church needs a roofer.<br>Someone at church <em>is</em> one.</h2>
+    <div class="story-grid">
+      <div class="story-step">
+        <div class="story-label"><span class="story-num">1</span>A member posts a need</div>
+        <div class="mini">
+          <div class="card post" style="margin:0;">
+            <div class="post-head">
+              <div class="avatar" data-pho="Rachel Torres">RT</div>
+              <div class="post-meta"><div class="post-author">Rachel Torres</div><div class="post-sub"><span style="color:#2563EB;">●</span> Main Feed · 25m ago</div></div>
+              <span class="cat-badge cat-request">Request</span>
+            </div>
+            <div class="post-title">Looking for a reliable roofer</div>
+            <div class="post-body">We've got a leak over the kitchen after last week's storm. Would love to hire someone from our church family before calling around. Anyone?</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-arrow"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+      <div class="story-step">
+        <div class="story-label"><span class="story-num">2</span>Someone from church answers</div>
+        <div class="mini">
+          <div class="card" style="padding:14px 15px;">
+            <div class="comment" style="margin-top:0;">
+              <div class="avatar" data-pho="Marcus Webb">MW</div>
+              <div class="comment-main">
+                <div class="comment-author">Marcus Webb<small>18m ago</small></div>
+                <div class="comment-text">Rachel, this is exactly what we do. I can come take a look tomorrow afternoon — no charge for the estimate.</div>
+              </div>
+            </div>
+            <div class="comment" style="margin-left:22px;">
+              <div class="avatar" data-pho="James Carter">JC</div>
+              <div class="comment-main">
+                <div class="comment-author">James Carter<small>9m ago</small></div>
+                <div class="comment-text">Can vouch for Marcus — he redid our garage roof two summers ago. Solid work.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="story-arrow"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+      <div class="story-step">
+        <div class="story-label"><span class="story-num">3</span>Need met, inside the church</div>
+        <div class="mini">
+          <div class="card post" style="margin:0;">
+            <div class="post-head">
+              <div class="avatar" data-pho="Rachel Torres">RT</div>
+              <div class="post-meta"><div class="post-author">Rachel Torres</div><div class="post-sub"><span style="color:#2563EB;">●</span> Main Feed · 1d ago</div></div>
+              <span class="cat-badge cat-request">Request</span>
+            </div>
+            <div class="post-title">RESOLVED: Looking for a reliable roofer</div>
+            <div class="post-body">Marcus came out the next day and the leak is fixed. Thank you, church family.</div>
+            <div class="post-foot"><span>3 comments</span><span class="resolved-tag">Marked as helped</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="story-note">No algorithm decides who sees it. No stranger can. It's just your church, helping your church — on a Tuesday.</p>
+  </div>
+</section>
+
+<section class="scen" id="what-members-do">
+  <div class="story-inner">
+    <span class="eyebrow">What a member actually does with it</span>
+    <h2 class="sec-h">Three things people do in their first week.</h2>
+    <div class="scen-grid">
+      <div class="scen-card">
+        <div class="mini mini-tall">
+          <div class="search-bar" style="margin:0 0 10px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span style="font-size:14px;color:var(--ink);">tutor</span></div>
+          <div class="card person-card" style="margin:0 0 10px;">
+            <div class="avatar" data-pho="Sarah Kim">SK</div>
+            <div class="person-info"><div class="person-name">Sarah Kim</div><div class="person-occ">High School Teacher</div>
+            <div class="person-skills"><span class="skill-tag">Tutoring</span><span class="skill-tag">Math</span><span class="skill-tag">College Prep</span></div></div>
+          </div>
+          <div class="card person-card" style="margin:0 0 10px;">
+            <div class="avatar" data-pho="Abby Reynolds">AR</div>
+            <div class="person-info"><div class="person-name">Abby Reynolds</div><div class="person-occ">College student, home for summer</div>
+            <div class="person-skills"><span class="skill-tag">Homework help</span><span class="skill-tag">Babysitting</span></div></div>
+          </div>
+          <div class="card person-card" style="margin:0 0 10px;">
+            <div class="avatar" data-pho="Priya Nair">PN</div>
+            <div class="person-info"><div class="person-name">Priya Nair</div><div class="person-occ">Graphic Designer</div>
+            <div class="person-skills"><span class="skill-tag">Branding</span><span class="skill-tag">Mentoring students</span></div></div>
+          </div>
+          <div class="card person-card" style="margin:0;">
+            <div class="avatar" data-pho="David Okafor">DO</div>
+            <div class="person-info"><div class="person-name">David Okafor</div><div class="person-occ">Financial Advisor</div>
+            <div class="person-skills"><span class="skill-tag">Budgeting for teens</span><span class="skill-tag">Taxes</span></div></div>
+          </div>
+        </div>
+        <h3>Find the help already in the pews</h3>
+        <p>Search the congregation by skill or trade. The tutor, the nurse, the electrician — they were three rows over the whole time.</p>
+      </div>
+      <div class="scen-card">
+        <div class="mini mini-tall">
+          <div class="card post" style="margin:0;">
+            <div class="post-head">
+              <div class="avatar" data-pho="Dana Webb">DW</div>
+              <div class="post-meta"><div class="post-author">Dana Webb</div><div class="post-sub"><span style="color:#DB2777;">●</span> Women's Ministry · 40m ago</div></div>
+              <span class="cat-badge cat-offering">Offering</span>
+            </div>
+            <div class="post-title">Meal train for the Hendersons</div>
+            <div class="post-body">The Hendersons welcomed baby Levi on Sunday! Starting a two-week meal train — comment below to claim a night.</div>
+            <div class="comment"><div class="avatar" data-pho="Sarah Kim">SK</div><div class="comment-main"><div class="comment-author">Sarah Kim</div><div class="comment-text">I'll take Tuesday! Lasagna it is.</div></div></div>
+            <div class="comment"><div class="avatar" data-pho="Eleanor Price">EP</div><div class="comment-main"><div class="comment-author">Eleanor Price</div><div class="comment-text">Thursday for me — my chicken pot pie travels well.</div></div></div>
+            <div class="comment"><div class="avatar" data-pho="Rachel Torres">RT</div><div class="comment-main"><div class="comment-author">Rachel Torres</div><div class="comment-text">Friday's ours — the kids want to bake cookies for them.</div></div></div>
+            <div class="comment"><div class="avatar" data-pho="Grace Liu">GL</div><div class="comment-main"><div class="comment-author">Grace Liu</div><div class="comment-text">Saturday! And I'll bring the camera for some newborn photos.</div></div></div>
+          </div>
+        </div>
+        <h3>Rally around a family</h3>
+        <p>A new baby, a surgery, a move. One post in a group, and dinner is covered for two weeks by people who already love them.</p>
+      </div>
+      <div class="scen-card">
+        <div class="mini mini-tall" style="padding:0;overflow:hidden;">
+          <div class="hq-head" style="background:#fff;">
+            <div class="group-ic" style="background:#FEF3E8;color:#D97706;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:14px;font-weight:800;">Wednesday Small Group <span style="font-size:9.5px;font-weight:700;background:#E8F7F1;color:var(--green);padding:2px 7px;border-radius:10px;vertical-align:1px;">Official</span></div>
+              <div class="hq-meta">Led by <b>James &amp; Ruth Carter</b> · Wednesdays 6:30 PM</div>
+              <div class="group-members" style="margin-top:4px;">14 members</div>
+            </div>
+          </div>
+          <div class="seg" style="margin:12px 14px 8px;"><button>Feed</button><button class="on">Resources</button><button>Events</button></div>
+          <div class="h-sub" style="margin:8px 14px 6px;font-size:11px;">Pinned by the leaders</div>
+          <div class="card res-card" style="margin:0 14px 8px;">
+            <div class="res-ic" style="background:#FEE2E2;color:#DC2626;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+            <div class="res-info"><div class="res-name">James — Study Guide, Weeks 1–8<span class="res-pin">Pinned</span></div><div class="res-sub">PDF · 1.2 MB · Ruth Carter</div></div>
+          </div>
+          <div class="card res-card" style="margin:0 14px 8px;">
+            <div class="res-ic" style="background:#DBEAFE;color:#2563EB;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+            <div class="res-info"><div class="res-name">Ruth's notes — James 2</div><div class="res-sub">Document · 88 KB · Ruth Carter · Today</div></div>
+          </div>
+          <div class="card res-card" style="margin:0 14px 14px;">
+            <div class="res-ic" style="background:#D1FAE5;color:#059669;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M3 15h18"/><path d="M10 4v16"/></svg></div>
+            <div class="res-info"><div class="res-name">Chili night sign-up</div><div class="res-sub">Spreadsheet · 22 KB · Ruth Carter</div></div>
+          </div>
+          <div class="card res-card" style="margin:0 14px 8px;">
+            <div class="res-ic" style="background:#FEE2E2;color:#DC2626;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+            <div class="res-info"><div class="res-name">Host &amp; snack rotation — April/May</div><div class="res-sub">PDF · 110 KB · James Carter</div></div>
+          </div>
+        </div>
+        <h3>Belong to something smaller</h3>
+        <p>Every group is a home, not just a chat: its posts, its study guide, its schedule and sign-ups, all in one place. Members start and lead their own — the church office never has to.</p>
+      </div>
+    </div>
+    <p class="story-note" style="margin-top:28px;">And underneath it all: a real church calendar with one-tap RSVP, private messages that stay private, and leaders who finally see what the body can do. <a href="#member-demo" style="color:var(--blue);font-weight:700;text-decoration:none;">Try the live demo</a></p>
+  </div>
 </section>
 
 <section class="demo-section" id="member-demo">
@@ -2379,6 +2551,7 @@ function publishAnn(){
 
 /* ============ INIT ============ */
 renderFeed(); renderGroups(); renderSearch(); renderChurch(); renderProfile(); renderAdmin();
+document.querySelectorAll("[data-pho]").forEach(el=>{ el.style.cssText += pho(el.dataset.pho); });
 
 </script>
 </body>
