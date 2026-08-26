@@ -670,7 +670,8 @@ footer .f-line{font-size:12.5px;color:var(--gray-400);font-weight:600;margin-top
           <div class="brand-name">Interconnected</div>
           <p>Your church community — connected every day of the week.</p>
           <div class="church-pill">Invited by Grace Community Church</div>
-          <button class="btn" onclick="obGo(1)">Create your account</button>
+          <button class="btn" onclick="startTour()">Take the tour</button>
+          <button class="tut-skip" style="color:#BFDBFE;margin-top:16px;" onclick="obGo(1)">Or create an account and explore on your own</button>
         </div>
 
         <div class="ob-screen ob-form" data-ob="1">
@@ -2007,6 +2008,7 @@ function nextTour(){
 function endTour(){
   const c = $("tourCard"); if(c) c.remove();
   closeSheet(); goTab("feed");
+  schedulePush();
 }
 
 /* ============ FAKE PUSH NOTIFICATION ============ */
