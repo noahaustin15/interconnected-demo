@@ -754,6 +754,24 @@ body{background:#fff;}
 .v3-shot-wrap:hover .v3-shot-cta{opacity:1;}
 @media(hover:none){.v3-shot-cta{opacity:1;background:none;align-items:flex-end;}.v3-shot-cta span{font-size:12px;padding:9px 14px;}}
 
+/* pilot modal */
+.v3-modal{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:500;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px);}
+.v3-modal.open{display:flex;}
+.v3-modal-box{background:#fff;border-radius:22px;width:100%;max-width:560px;max-height:92vh;overflow-y:auto;padding:30px 30px 26px;position:relative;box-shadow:0 30px 80px rgba(15,23,42,.35);animation:up .22s ease;text-align:left;}
+.v3-modal-x{position:absolute;top:16px;right:16px;}
+.v3-modal-box h3{font-size:26px;font-weight:800;letter-spacing:-.03em;margin-top:10px;}
+.v3-modal-box p{font-size:14px;color:var(--gray-500);line-height:1.6;margin-top:8px;}
+.v3-field{margin-top:14px;flex:1;min-width:0;}
+.v3-field label{font-size:11.5px;font-weight:700;color:var(--gray-500);display:block;margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase;}
+.v3-field input,.v3-field textarea{width:100%;font-family:inherit;font-size:14.5px;border:1px solid var(--gray-200);border-radius:12px;padding:12px 14px;outline:none;resize:none;color:var(--ink);background:#fff;}
+.v3-field input:focus,.v3-field textarea:focus{border-color:var(--blue);}
+.v3-field-row{display:flex;gap:12px;}
+@media(max-width:520px){.v3-field-row{flex-direction:column;gap:0;}.v3-modal-box{padding:24px 20px 20px;}}
+.v3-modal-send{width:100%;margin-top:20px;padding:15px 0;font-size:15px;border-radius:13px;}
+.v3-modal-alt{font-size:12.5px;color:var(--gray-400);text-align:center;margin-top:14px;line-height:1.5;}
+.v3-modal-alt a{color:var(--blue);font-weight:700;text-decoration:none;}
+.v3-copybox{width:100%;font-family:inherit;font-size:13px;line-height:1.5;color:var(--gray-700);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:12px 14px;margin-top:14px;resize:none;outline:none;}
+
 /* leadership */
 .admin-mini{padding:14px;background:var(--gray-50)!important;}
 .admin-mini .panel{margin-top:12px;}
@@ -816,7 +834,7 @@ body{background:#fff;}
     <a href="#how">How it launches</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a class="nav-cta" href="#pilot">Request a pilot</a>
+  <a class="nav-cta" href="#pilot" onclick="openPilot();return false;">Request a pilot</a>
 </div></nav>
 
 <div class="v3-top">
@@ -1232,8 +1250,43 @@ body{background:#fff;}
   <div class="verse">Every member has a gift. Every gift has a purpose. &nbsp;·&nbsp; 1 Peter 4:10</div>
   <h2>Become a founding church.</h2>
   <p>We're onboarding a limited group of pilot churches with white-glove setup, launch materials, and founding-partner pricing.</p>
-  <a class="btn" href="mailto:noah@joininterconnected.com?subject=Pilot%20church%20inquiry">Request a pilot</a>
+  <a class="btn" href="#pilot" onclick="openPilot();return false;">Request a pilot</a>
 </section>
+
+
+<div class="v3-modal" id="pilotModal" onclick="if(event.target.id==='pilotModal')closePilot()">
+  <div class="v3-modal-box" role="dialog" aria-label="Request a pilot">
+    <button class="sheet-close v3-modal-x" onclick="closePilot()" aria-label="Close">✕</button>
+    <div id="pilotForm">
+      <span class="v3-eyebrow">Founding churches</span>
+      <h3>Request a pilot</h3>
+      <p>Tell us a little about your church. Noah reads every one of these himself and replies within a day or two.</p>
+      <div class="v3-field"><label>Church</label><input id="pfChurch" placeholder="Grace Community Church"></div>
+      <div class="v3-field-row">
+        <div class="v3-field"><label>Your name</label><input id="pfName" placeholder="Pastor Mike Reynolds"></div>
+        <div class="v3-field"><label>Role</label><input id="pfRole" placeholder="Senior Pastor"></div>
+      </div>
+      <div class="v3-field-row">
+        <div class="v3-field"><label>Email</label><input id="pfEmail" type="email" placeholder="you@yourchurch.org"></div>
+        <div class="v3-field"><label>Congregation size</label><input id="pfSize" placeholder="e.g. 400"></div>
+      </div>
+      <div class="v3-field"><label>Anything we should know? (optional)</label><textarea id="pfNote" rows="3" placeholder="What made you curious, what you'd want out of a pilot, questions for us…"></textarea></div>
+      <button class="btn btn-primary v3-modal-send" onclick="sendPilot()">Send request</button>
+      <div class="v3-modal-alt">Or email <a href="mailto:noah@joininterconnected.com">noah@joininterconnected.com</a> directly.</div>
+    </div>
+    <div id="pilotDone" style="display:none;">
+      <span class="v3-eyebrow">Almost there</span>
+      <h3>Your email app should have opened.</h3>
+      <p>We put everything into a draft addressed to <b>noah@joininterconnected.com</b> — just hit send. If nothing opened, copy your request below and send it from any email.</p>
+      <textarea id="pfCopyText" class="v3-copybox" readonly rows="7"></textarea>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+        <button class="btn btn-primary" style="padding:12px 18px;font-size:13.5px;" onclick="copyPilot(this)">Copy request</button>
+        <a class="btn btn-ghost" id="pfMailAgain" style="padding:12px 18px;font-size:13.5px;text-decoration:none;" href="#">Open email app again</a>
+      </div>
+      <div class="v3-modal-alt">Thank you — we're grateful you'd consider this for your church.</div>
+    </div>
+  </div>
+</div>
 
 <footer class="v3-footer"><div class="v3-wrap">
   <div class="brand"><svg width="26" height="26" viewBox="0 0 64 64" fill="none"><circle cx="13.8" cy="26.1" r="1.53" fill="#2563EB"/><circle cx="15.4" cy="29.4" r="1.59" fill="#93C5FD"/><circle cx="19.6" cy="25.3" r="2.13" fill="#60A5FA"/><circle cx="19.7" cy="28.7" r="1.66" fill="#60A5FA"/><circle cx="23.5" cy="24.2" r="2.13" fill="#3B82F6"/><circle cx="24.0" cy="30.0" r="1.28" fill="#60A5FA"/><circle cx="28.1" cy="13.3" r="2.07" fill="#60A5FA"/><circle cx="28.1" cy="17.9" r="1.66" fill="#3B82F6"/><circle cx="27.9" cy="20.7" r="1.33" fill="#3B82F6"/><circle cx="27.0" cy="24.7" r="2.51" fill="#60A5FA"/><circle cx="27.7" cy="30.1" r="1.19" fill="#3B82F6"/><circle cx="27.3" cy="33.4" r="1.73" fill="#2563EB"/><circle cx="28.1" cy="36.5" r="1.65" fill="#3B82F6"/><circle cx="27.6" cy="42.5" r="1.87" fill="#2563EB"/><circle cx="27.2" cy="45.7" r="1.65" fill="#3B82F6"/><circle cx="27.2" cy="49.8" r="2.02" fill="#2563EB"/><circle cx="28.1" cy="53.8" r="2.39" fill="#60A5FA"/><circle cx="31.6" cy="12.9" r="1.86" fill="#60A5FA"/><circle cx="32.3" cy="16.8" r="2.16" fill="#3B82F6"/><circle cx="31.5" cy="20.8" r="1.60" fill="#3B82F6"/><circle cx="31.9" cy="26.0" r="1.27" fill="#93C5FD"/><circle cx="30.4" cy="29.1" r="1.33" fill="#2563EB"/><circle cx="32.4" cy="32.8" r="2.05" fill="#2563EB"/><circle cx="31.2" cy="37.7" r="1.31" fill="#93C5FD"/><circle cx="32.1" cy="42.5" r="2.43" fill="#93C5FD"/><circle cx="31.9" cy="45.2" r="1.12" fill="#2563EB"/><circle cx="30.4" cy="48.7" r="2.03" fill="#2563EB"/><circle cx="31.8" cy="53.9" r="2.13" fill="#2563EB"/><circle cx="36.2" cy="12.3" r="1.66" fill="#93C5FD"/><circle cx="34.6" cy="17.0" r="1.10" fill="#93C5FD"/><circle cx="35.7" cy="22.0" r="1.13" fill="#93C5FD"/><circle cx="34.7" cy="26.2" r="1.95" fill="#60A5FA"/><circle cx="34.9" cy="28.7" r="1.41" fill="#60A5FA"/><circle cx="34.4" cy="34.0" r="2.15" fill="#60A5FA"/><circle cx="35.4" cy="36.5" r="1.27" fill="#93C5FD"/><circle cx="34.6" cy="42.0" r="2.44" fill="#2563EB"/><circle cx="35.4" cy="45.7" r="2.59" fill="#93C5FD"/><circle cx="36.0" cy="49.6" r="1.47" fill="#60A5FA"/><circle cx="36.2" cy="53.7" r="1.45" fill="#3B82F6"/><circle cx="40.4" cy="25.3" r="1.63" fill="#60A5FA"/><circle cx="40.0" cy="28.9" r="2.19" fill="#3B82F6"/><circle cx="42.9" cy="24.8" r="2.58" fill="#93C5FD"/><circle cx="43.9" cy="30.1" r="2.48" fill="#2563EB"/><circle cx="48.0" cy="24.4" r="1.85" fill="#60A5FA"/><circle cx="48.3" cy="30.3" r="1.82" fill="#2563EB"/><circle cx="51.7" cy="24.5" r="2.09" fill="#60A5FA"/><circle cx="51.9" cy="29.3" r="2.24" fill="#3B82F6"/></svg><span class="brand-name" style="font-size:15px;">Interconnected</span></div>
@@ -2715,6 +2768,38 @@ document.querySelectorAll("[data-pho]").forEach(el=>{ el.style.cssText += pho(el
 </script>
 
 <script>
+/* Request a pilot: in-page form that hands off to email, with a copy fallback for devices with no mail app. */
+const PILOT_EMAIL = "noah@joininterconnected.com";
+function openPilot(){ $("pilotForm").style.display=""; $("pilotDone").style.display="none"; $("pilotModal").classList.add("open"); setTimeout(()=>{ const f=$("pfChurch"); if(f) f.focus(); }, 60); }
+function closePilot(){ $("pilotModal").classList.remove("open"); }
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closePilot(); });
+function sendPilot(){
+  const v = id => ($(id).value||"").trim();
+  const church=v("pfChurch"), name=v("pfName"), role=v("pfRole"), email=v("pfEmail"), size=v("pfSize"), note=v("pfNote");
+  if(!church && !name && !email){ $("pfChurch").focus(); $("pfChurch").style.borderColor="#DC2626"; return; }
+  const subject = "Pilot church inquiry" + (church ? " — " + church : "");
+  const body = [
+    "Hi Noah,", "",
+    "We'd like to talk about a pilot of Interconnected.", "",
+    "Church: " + (church||"—"),
+    "Name: " + (name||"—") + (role ? " (" + role + ")" : ""),
+    "Email: " + (email||"—"),
+    "Congregation size: " + (size||"—"),
+    "", note ? "Notes: " + note : "", "",
+    "Sent from joininterconnected.com"
+  ].join(String.fromCharCode(10));
+  const href = "mailto:" + PILOT_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  $("pfCopyText").value = ["To: " + PILOT_EMAIL, "Subject: " + subject, "", body].join(String.fromCharCode(10));
+  $("pfMailAgain").href = href;
+  $("pilotForm").style.display="none"; $("pilotDone").style.display="";
+  window.location.href = href;
+}
+function copyPilot(btn){
+  const t = $("pfCopyText"); t.select(); t.setSelectionRange(0, 99999);
+  const done = ()=>{ btn.textContent="Copied"; setTimeout(()=>btn.textContent="Copy request", 2000); };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t.value).then(done, ()=>{ document.execCommand("copy"); done(); }); }
+  else { document.execCommand("copy"); done(); }
+}
 /* Landing-page crops open the matching screen in the live demo. */
 function demoJump(kind){
   if(kind.startsWith("admin:")){ adminGo(kind.slice(6)); const br = document.querySelector(".browser"); br.scrollIntoView({behavior:"smooth", block:"center"}); return; }
